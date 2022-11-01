@@ -1,0 +1,16 @@
+.navbar {
+   height: 10vh;
+   background: #24292f;
+   color: #fff;
+}
+.navbar .container {
+   height: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.navbar .logo img {
+   width: 40px;
+   filter: invert(100%);
+}
+  

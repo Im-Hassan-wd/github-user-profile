@@ -1,0 +1,26 @@
+.searchbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    color: #fff;
+    border: 1px solid #57606a;
+    border-radius: 7px;
+    width: 300px;
+}
+.searchbar input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+.searchbar input::placeholder {
+    color: #fff;
+}
+.searchbar button {
+    background: none;
+    border: 1px solid #57606a;
+    border-radius: 4px;
+    padding: 1px 8px;
+    color: #57606a;
+}
