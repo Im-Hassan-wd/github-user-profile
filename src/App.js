@@ -4,7 +4,6 @@ import { Routes, Route} from "react-router-dom"
 import "./App.css"
 // pages and components
 import Home from "./pages/home/Home"
-import Navbar from "./components/Navbar"
 import Search from "./pages/search/Search"
 
 // pages and components
@@ -12,7 +11,6 @@ import Search from "./pages/search/Search"
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />

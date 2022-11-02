@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import Navbar from './Navbar'
+
 // styles
 import './Profile.css'
 
@@ -49,7 +51,8 @@ export default function Profile() {
   }
 
   return (
-    <div className='container'>
+    <div className=''>
+      <Navbar />
       <div className="profile">
         {users.map(profile => (
           <div

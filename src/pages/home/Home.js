@@ -1,14 +1,12 @@
-// components
-import Profile from '../../components/Profile'
-
 // styles
 import './Home.css'
-
+//components
+import Hero from '../../components/Hero';
 
 export default function Home() {
   return (
-    <div className='container'>
-      Home
+    <div className=''>
+      <Hero />
     </div>
   );
 }

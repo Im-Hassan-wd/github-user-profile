@@ -1,4 +1,5 @@
 import { useState } from 'react'
+// import { useHistory } from 'react-router-dom'
 
 // styles
 import './Searchbar.css'
@@ -10,7 +11,7 @@ export default function Searchbar() {
 
   const handleSearch = e => {
     e.preventDefault()
-    // history.push(`/search?q=${term}`)
+  //  history.push(`/search?q=${term}`)
   }
  
   return (
