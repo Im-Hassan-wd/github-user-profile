@@ -10,16 +10,16 @@ export default function Hero() {
       <div className='container'>
       <nav>
         <div className='logo'>
-            <img src={logo} alt='logo' />
+            <img src={logo} alt='logo' />githubPro
         </div>
         <ul>
-            <li><Link to='*'>Home</Link></li>
-            <li><Link to='*'>Find user</Link></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/search'>Find user</Link></li>
         </ul>
       </nav>
       <div className='content'>
         <h1>The online coding platform for every developer</h1>
-        <Link to='*'>Find user</Link>
+        <Link to='/search'>Find user</Link>
         <img src={openSource} alt='open-source' />
       </div>
       </div>

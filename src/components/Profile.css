@@ -1,5 +1,5 @@
 .profile {
-  margin: 32px 0;
+  margin: 32px;
   background: #fff;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -32,10 +32,9 @@
 
 .preview a, .btn-load-more {
   text-decoration: none;
-  background: #DB4040;
+  background: #F2AD5F;
   border: none;
   padding: 3px 10px;
-  width: 110px;
   height: 24px;
   margin: 8px;
   margin-top: 24px;

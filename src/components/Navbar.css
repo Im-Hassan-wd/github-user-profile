@@ -1,7 +1,7 @@
 .navbar {
    height: 10vh;
-   background: #24292f;
    color: #fff;
+   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 .navbar .container {
    height: 100%;
@@ -11,6 +11,14 @@
 }
 .navbar .logo img {
    width: 40px;
-   filter: invert(100%);
+}
+
+.navbar a {
+   text-decoration: none;
+   display: flex;
+   text-transform: uppercase;
+   font-weight: bold;
+   align-items: center;
+   color: #F2AD5F;
 }
   

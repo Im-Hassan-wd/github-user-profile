@@ -1,0 +1,30 @@
+.cta {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cta div{
+    width: 500px;
+    padding: 22px;
+}
+
+.cta div:nth-child(1) {
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding-top: 40px;
+    padding-bottom: 64px;
+    height: 300px;
+    width: 820px;
+}
+
+.cta h1 {
+    font-size: 60px;
+    max-width: 550px;
+}
+
+.cta img {
+    width: 400px;
+}

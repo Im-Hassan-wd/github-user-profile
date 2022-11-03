@@ -25,7 +25,7 @@ export default function Profile() {
         const res = await fetch(url)
 
         if(!res.ok) {
-          throw new Error(res.statusText)
+          throw new Error("Couldn't get users at the moment, try again")
         }
 
         const data = await res.json()
@@ -67,7 +67,7 @@ export default function Profile() {
                 <p><span className='label'>username:</span> {profile.login}</p>
                 <p><span className='label'>score:</span> {profile.score}</p>
                 <p><span className='label'>profile type:</span> {profile.type}</p>
-                <a className='link' href={profile.html_url}>View repo</a>
+                <a className='link' href={profile.html_url}>View Respository</a>
               </div>
             </div>
         ))}
