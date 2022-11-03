@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import Navbar from './Navbar'
 
@@ -33,20 +34,20 @@ export default function Profile() {
         setError(false)
         setIsPending(false)
         setUsers([...users, ...data.items])
+        console.log([...users])
         // setUsers(data.items)
         setTotalPages(Math.round(data.total_count / 30))
         
       }
       catch(err) {
         setIsPending(false)
-        console.log(err.message)
         setError(err.message)
       }
     }
     getUser()
   }, [page, url])
 
-  if(users.length === 0) {
+  if(error) {
     return <div className='error'>No user profile...</div> 
   }
 
@@ -54,10 +55,10 @@ export default function Profile() {
     <div className=''>
       <Navbar />
       <div className="profile">
-        {users.map(profile => (
+        {users && users.map(profile => (
           <div
             className='preview' 
-            key={profile.id}
+            // key={profile.login}
             onMouseEnter={() => setHover(true)} 
             onMouseLeave={() => setHover(false)}
           >
@@ -67,7 +68,7 @@ export default function Profile() {
                 <p><span className='label'>username:</span> {profile.login}</p>
                 <p><span className='label'>score:</span> {profile.score}</p>
                 <p><span className='label'>profile type:</span> {profile.type}</p>
-                <a className='link' href={profile.html_url}>View Respository</a>
+                <Link to={`/users/${profile.login}`}>View Repository</Link>
               </div>
             </div>
         ))}

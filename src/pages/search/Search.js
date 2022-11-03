@@ -53,10 +53,10 @@ export default function Search() {
   }, [page, url])
 
   return (
-    <div>
+    <div className='search'>
+      {users && <Profile data={users} totalPages={totalPages} page={page} setPage={setPage} isPending={isPending} />}
       {error && <h2>{error}</h2>}
       {isPending && <h2>Loading...</h2>}
-      {users && <Profile data={users} totalPages={totalPages} page={page} setPage={setPage} isPending={isPending} />}
     </div>
   )
 }

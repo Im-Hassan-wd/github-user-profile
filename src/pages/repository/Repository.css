@@ -1,0 +1,61 @@
+.repository {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.banner {
+    max-width: 1440px;
+    height: 200px;
+    background: #f5f5f5;
+    border-top-left-radius: 100px;
+}
+
+.owner-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 10px;
+    background: #fff;
+    margin-top: -40px;
+}
+
+.owner {
+    margin-top: -70px;
+    margin-left: 100px;
+}
+
+.repo {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.repo ul {
+    list-style: none;
+}
+
+.repo-main-list li div{
+    display: flex;
+    align-items: center;
+}
+
+.repo-main-list-li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 24px;
+}
+
+.repo-main-list p {
+    margin-left: 16px;
+}
+
+.repo-main-list li div img {
+    width: 16px;
+    height: 16px;
+}
+
+.repo-sub-list {
+    display: flex;
+}
+
+.repo-sub-list li {
+    margin: 0 8px;
+}

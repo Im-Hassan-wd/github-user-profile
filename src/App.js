@@ -4,6 +4,7 @@ import { Routes, Route} from "react-router-dom"
 import "./App.css"
 // pages and components
 import Home from "./pages/home/Home"
+import Repository from "./pages/repository/Repository";
 import Search from "./pages/search/Search"
 
 // pages and components
@@ -15,7 +16,11 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
 
-        <Route path='/search' element={<Search />} />
+        <Route>
+          <Route index element={<Search />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/users/:id' element={<Repository />} />
+        </Route>
       </Routes>
     </div>
   );
