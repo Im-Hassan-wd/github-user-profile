@@ -22,7 +22,7 @@
    color: #F2AD5F;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 600px) {
    .navbar span {
       display: none;
    } 

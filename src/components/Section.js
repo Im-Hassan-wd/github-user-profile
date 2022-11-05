@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 // static files
 import './Section.css'
 import sofwareEngin from '../img/software.png';

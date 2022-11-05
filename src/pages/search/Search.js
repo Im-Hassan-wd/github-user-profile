@@ -52,8 +52,8 @@ export default function Search() {
       <title>Search</title>
       <meta name="description" content="find a user" />
       <link rel="canonical" href="/search" />
-      </Helmet>
-    <div className='search'>
+    </Helmet>
+    <div layout className='search'>
       {users && <Profile 
         page={page}
         setPage={setPage}
@@ -65,8 +65,6 @@ export default function Search() {
         setError={setError}
         url={url}
         setUrl={setUrl}
-        queryString={queryString}
-        queryParams={queryParams}
         query={query}
         />}
     </div>

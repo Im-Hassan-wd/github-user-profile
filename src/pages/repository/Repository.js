@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 // static files  
 import './Repository.css'
@@ -28,6 +28,7 @@ export default function Repository () {
         const data = await res.json();
         setRepositories(data);
         setIsPending(false)
+        setError(null)
     }
     catch(err) {
         console.log(err.message)
@@ -50,7 +51,11 @@ export default function Repository () {
             </div>
             <div className='repo'>
                 <h4>Repositories({repositories.length})</h4>
-                {isPending && <h3>...</h3>}
+                {isPending && <h3>
+                        <span className="load-span">.</span>
+                        <span className="load-span">.</span>
+                        <span className="load-span">.</span>
+                    </h3>}
                 {error && <h3>{error}</h3>}
                 <ul className='repo-main-list'>
                 {repositories && repositories.map(repository => (
@@ -61,14 +66,17 @@ export default function Repository () {
                             <span>Public</span>
                         </div>
                         <ul className='repo-sub-list'>
-                            <li>{ repository.language }</li>
+                            {repository.language ?
+                                <li>{ repository.language }</li>:
+                                <li><span className='load-span'>.</span><span className='load-span'>.</span><span className='load-span'>.</span></li>
+                            }
                             <li>
                                 <img className='repo-icon' src={star} alt='star-icon' />
-                                <span>{ repository.stargazers_count }</span>
+                                <span className='count'>{ repository.stargazers_count }</span>
                             </li>
                             <li>
                                 <img className='repo-icon' src={fork} alt='fork-icon' />
-                                <span>{ repository.forks }</span>
+                                <span className='count'>{ repository.forks }</span>
                             </li>
                         </ul>
                     </li>

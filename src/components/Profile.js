@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 import Navbar from './Navbar'
 import Pagination from './Pagination'
 
 // styles
 import './Profile.css'
+import User from './User'
 
 export default function Profile({ 
     page,
@@ -18,42 +18,39 @@ export default function Profile({
     setError,
     url,
     setUrl,
-    queryString,
-    queryParams,
     query
   }) {
-
-  const [hover, setHover] = useState(false)
 
   useEffect(() => {
     window.scrollTo({
       behaviour: "smooth",
       top: "0px",
     })
-    const getUser = async () => {
-
-      setIsPending(true)
-
-      try {
-        const res = await fetch(url)
-
-        if(!res.ok) {
-          throw new Error("Couldn't get users at the moment, try again")
-        }
-
-        const data = await res.json()
-        
-        setError(false)
-        setIsPending(false)
-        setUsers(data.items)
-      }
-      catch(err) {
-        setIsPending(false)
-        setError(err.message)
-      }
-    }
     getUser()
   }, [url])
+
+  const getUser = async () => {
+
+    setIsPending(true)
+
+    try {
+      const res = await fetch(url)
+
+      if(!res.ok) {
+        throw new Error("Couldn't get users at the moment, try again")
+      }
+
+      const data = await res.json()
+      
+      setError(false)
+      setIsPending(false)
+      setUsers(data.items)
+    }
+    catch(err) {
+      setIsPending(false)
+      setError(err.message)
+    }
+  }
 
   if(error) {
     return ( 
@@ -68,29 +65,16 @@ export default function Profile({
     <div className=''>
       <Navbar />
       <div className="msg">
-        {isPending && <h2><span>.</span><span>.</span><span>.</span></h2>}
+        {isPending && <h3>
+          <span className='load-span'>.</span>
+          <span className='load-span'>.</span>
+          <span className='load-span'>.</span>
+        </h3>}
         {error && <h2>Coundn't get data for that resource</h2>}
       </div>
-      <div className="profile">
-        {users && users.map(profile => (
-          <div
-            className='preview' 
-            key={profile.avatar_url}
-            onMouseEnter={() => setHover(true)} 
-            onMouseLeave={() => setHover(false)}
-          >
-            <div className='frame'></div>
-            <div className="text">
-              <div className="img-div"><img src={profile.avatar_url} alt="" /></div>
-                <p><span className='label'>username:</span> {profile.login}</p>
-                <p><span className='label'>score:</span> {profile.score}</p>
-                <p><span className='label'>profile type:</span> {profile.type}</p>
-                <Link to={`/repository/${profile.login}/${profile.id}`}>View Repository</Link>
-              </div>
-            </div>
-        ))}
+      <div>
+        <User users={users} />
       </div>
-      {/* {totalPages !== page && <button className="btn-load-more" onClick={() => setPage(page + 1)}>{isPending ? 'loading...' : 'Load More'}</button>} */}
       <Pagination 
         setUrl={setUrl} 
         page={page} 
