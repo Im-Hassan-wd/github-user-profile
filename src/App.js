@@ -22,7 +22,7 @@ function App() {
         <Route>
           <Route index element={<Search />} />
           <Route path='/search' element={<Search />} />
-          <Route path='/users/:name/:id' element={<Repository />} />
+          <Route path='/repository/:name/:id' element={<Repository />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

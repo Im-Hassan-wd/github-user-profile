@@ -46,6 +46,12 @@ export default function Search() {
   }, [page, url, query])
 
   return (
+    <>
+    <Helmet>
+      <title>Search</title>
+      <meta name="description" content="find a user" />
+      <link rel="canonical" href="/search" />
+      </Helmet>
     <div className='search'>
       {users && <Profile 
         page={page}
@@ -63,5 +69,6 @@ export default function Search() {
         query={query}
         />}
     </div>
+    </>
   )
 }

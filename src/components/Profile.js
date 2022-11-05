@@ -85,7 +85,7 @@ export default function Profile({
                 <p><span className='label'>username:</span> {profile.login}</p>
                 <p><span className='label'>score:</span> {profile.score}</p>
                 <p><span className='label'>profile type:</span> {profile.type}</p>
-                <Link to={`/users/${profile.login}/${profile.id}`}>View Repository</Link>
+                <Link to={`/repository/${profile.login}/${profile.id}`}>View Repository</Link>
               </div>
             </div>
         ))}
