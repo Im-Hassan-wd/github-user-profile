@@ -21,4 +21,11 @@
    align-items: center;
    color: #F2AD5F;
 }
+
+@media (max-width: 420px) {
+   .navbar span {
+      display: none;
+   } 
+}
+
   

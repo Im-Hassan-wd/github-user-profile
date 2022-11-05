@@ -3,7 +3,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 10px;
-    color: #fff;
     border: 1px solid #57606a;
     border-radius: 7px;
     width: 300px;
@@ -12,10 +11,10 @@
     background: none;
     border: none;
     outline: none;
-    color: #fff;
+    color: #333;
 }
 .searchbar input::placeholder {
-    color: #fff;
+    color: #333;
 }
 .searchbar button {
     background: none;

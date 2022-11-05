@@ -1,0 +1,32 @@
+.not-found {
+    margin: 64px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.not-found h1 {
+    font-size: 80px;
+    margin: 0;
+    margin-top: 16px;
+}
+
+.not-found h2 {
+    background: #333;
+    padding: 16px;
+    color: #fff;
+    max-width: 300px;
+    margin: 0;
+    font-size: 40px;
+}
+
+.not-found a {
+    color: #fff;
+    background: #333;
+    padding: 16px;
+}
+
+.not-found img {
+    margin-left: 64px;
+}

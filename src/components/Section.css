@@ -8,6 +8,7 @@
 .collab div {
     background: #124D5F;
     width: 1004px;
+    padding: 24px;
 }
 
 .collab div:nth-child(1) {
@@ -50,4 +51,14 @@
     color: #333;
     margin: 24px 0;
     text-transform: uppercase;
+}
+
+@media (max-width: 871px) {
+    .collab div:nth-child(1) {
+        margin-left: 0;
+        display: none;
+    }
+    .collab img {
+        display: none;
+    }
 }

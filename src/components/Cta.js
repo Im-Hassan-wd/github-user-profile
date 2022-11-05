@@ -9,7 +9,7 @@ export default function Cta() {
             <h1>Productive with Github Pro</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates id molestiae maxime quo est vitae. Commodi itaque exercitationem dignissimos ipsum.</p>
         </div>
-        <div><img src={team} alt='team' /></div>
+        <div className='cta-img-div'><img src={team} alt='team' /></div>
     </div>
   );
 }

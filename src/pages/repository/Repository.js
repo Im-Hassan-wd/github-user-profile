@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 // static files  
 import './Repository.css'
 import repo from '../../icons/repository.png'
@@ -8,40 +8,51 @@ import fork from '../../icons/fork.png'
 import image from '../../img/logo.JPG'
 
 export default function Repository () {
-    const {id} = useParams()
+    const { id, name } = useParams()
+
     const [repositories, setRepositories] = useState([])
+    const [error, setError] = useState(null)
+    const [isPending, setIsPending] = useState(true)
 
     useEffect(() => {
         fetchRepo()
     }, [])
     const fetchRepo = async () => {
-       const url =  'https://api.github.com/users/'+ id +'/repos';
+       const url =  'https://api.github.com/users/'+ name +'/repos';
        try {
         const res = await fetch(url);
+        if(!res) {
+            console.log(res)
+            throw new Error()
+        }
         const data = await res.json();
-        console.log(data)
-        setRepositories(data)
-       }
-       catch(err) {
+        setRepositories(data);
+        setIsPending(false)
+    }
+    catch(err) {
         console.log(err.message)
+        setIsPending(false)
        }
     }
 
     return ( 
         <div className="repository">
           <div className='banner'></div>
-          <img className='owner-img' src={'https://avatars.githubusercontent.com/u/8760121?v=4'} />
+          <img className='owner-img' src={'https://avatars.githubusercontent.com/u/'+ id +'?v=4'} />
           <div className='owner'>
-            <h2>{ id }</h2>
+            <h2>{ name }</h2>
           </div>
           <div className='repo'>
-            <h4>Repositories</h4>
+            <h4>Repositories({repositories.length})</h4>
+            {isPending && <h3>...</h3>}
+            {error && <h3>{error}</h3>}
             <ul className='repo-main-list'>
             {repositories && repositories.map(repository => (
                 <li className='repo-main-list-li' key={repository.archive_url}>
                     <div>
                         <img className='repo-icon' src={repo} alt='repo-icon'/>
-                        <p>{ repository.name }</p>
+                        <a href={repository.html_url}>{ repository.name }</a>
+                        <span>Public</span>
                     </div>
                     <ul className='repo-sub-list'>
                         <li>{ repository.language }</li>
@@ -51,7 +62,7 @@ export default function Repository () {
                         </li>
                         <li>
                             <img className='repo-icon' src={fork} alt='fork-icon' />
-                            <span>{ repository.star }</span>
+                            <span>{ repository.forks }</span>
                         </li>
                     </ul>
                 </li>

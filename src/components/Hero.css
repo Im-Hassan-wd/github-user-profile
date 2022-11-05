@@ -78,3 +78,15 @@
     z-index: 1;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 871px) {
+    .hero .content img{
+        display: none;
+    } 
+}
+
+@media (max-width: 420px) {
+    .hero .logo span {
+        display: none;
+    }
+}

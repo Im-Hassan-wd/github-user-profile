@@ -14,7 +14,7 @@ export default function Navbar() {
       <div className="container">
         <Link to='/' className='logo'>
           <img src={githubBrand} alt="logo" />
-          githubpro
+          <span>githubpro</span>
         </Link>
         <div className="logo">
         </div>

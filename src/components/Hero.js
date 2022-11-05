@@ -10,7 +10,8 @@ export default function Hero() {
       <div className='container'>
       <nav>
         <div className='logo'>
-            <img src={logo} alt='logo' />githubPro
+            <img src={logo} alt='logo' />
+            <span>githubPro</span>
         </div>
         <ul>
             <li><Link to='/'>Home</Link></li>
