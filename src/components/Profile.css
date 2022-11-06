@@ -77,3 +77,25 @@
 .null {
   pointer-events: none;
 }
+
+.msg h3 span:nth-child(1){
+  animation: loading 3s linear infinite;
+}
+.msg h3 span:nth-child(2){
+  animation: loading 3s linear infinite 1s;
+}
+.msg h3 span:nth-child(3){
+  animation: loading 3s linear infinite 2s;
+}
+
+@keyframes loading {
+  10%{
+      transform: translateY(0px);
+  }
+  50%{
+      transform: translateY(-2px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}

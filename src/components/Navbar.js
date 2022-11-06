@@ -8,9 +8,10 @@ import Searchbar from './Searchbar'
 
 
 export default function Navbar() {
+  
   return (
     <div className="home">
-      <nav>
+      <nav className='header-home-nav'>
         <Link to='/' className="logo">
           coding +2.0
         </Link>
@@ -18,9 +19,6 @@ export default function Navbar() {
           <li><Link>Docs</Link></li>
           <li><Link>Blog</Link></li>
           <li><Link to='/search'>users</Link></li>
-          <ul>
-            <li>github</li>
-          </ul>
         </ul>
         <Searchbar />
       </nav>

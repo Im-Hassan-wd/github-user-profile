@@ -1,0 +1,6 @@
+@media (max-width: 835px) {
+    .searchbar {
+        position: absolute;
+        top: 90px
+    }
+}

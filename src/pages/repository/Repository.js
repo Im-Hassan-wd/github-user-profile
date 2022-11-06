@@ -47,7 +47,7 @@ export default function Repository () {
             <div className='banner'></div>
             <img className='owner-img' alt='avatar' src={'https://avatars.githubusercontent.com/u/'+ id +'?v=4'} />
             <div className='owner'>
-                <h2>{ name }</h2>
+                <h3>{ name }</h3>
             </div>
             <div className='repo'>
                 <h4>Repositories({repositories.length})</h4>

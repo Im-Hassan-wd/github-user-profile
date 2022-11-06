@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import Navbar from './Navbar'
 import Pagination from './Pagination'
@@ -55,8 +56,9 @@ export default function Profile({
   if(error) {
     return ( 
       <div className='error'>
-        <Navbar />
-        <h1>No user profile found. Make sure you have internet connection!</h1>
+        <Navbar  />
+        <h1>Fret! Not you, it's us. Try again or</h1>
+        <Link to='/home'>Go back to safety</Link>
       </div> 
     )
   }
