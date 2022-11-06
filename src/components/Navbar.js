@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 
 // styles and images
 import './Navbar.css'
-import githubBrand from '../icons/github-brands-2.svg'
 
 // components
 import Searchbar from './Searchbar'
@@ -10,16 +9,21 @@ import Searchbar from './Searchbar'
 
 export default function Navbar() {
   return (
-    <nav className='navbar'>
-      <div className="container">
-        <Link to='/' className='logo'>
-          <img src={githubBrand} alt="logo" />
-          <span>githubpro</span>
+    <div className="home">
+      <nav>
+        <Link to='/' className="logo">
+          coding +2.0
         </Link>
-        <div className="logo">
-        </div>
+        <ul>
+          <li><Link>Docs</Link></li>
+          <li><Link>Blog</Link></li>
+          <li><Link to='/search'>users</Link></li>
+          <ul>
+            <li>github</li>
+          </ul>
+        </ul>
         <Searchbar />
-      </div>
-    </nav>
+      </nav>
+    </div>
   )
 }

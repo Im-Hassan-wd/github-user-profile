@@ -45,7 +45,13 @@
 
 .repo-main-list-li {
     border: 1px solid rgba(0, 0, 0, 0.1);
+    transform: scale(0.9);
     padding: 10px;
+}
+
+.repo-main-list-li:hover {
+    transform: rotate(-2deg) scale(1);
+    transition: all 0.5s ease;
 }
 
 .repo-main-list-li div span {
@@ -58,7 +64,7 @@
 
 .repo-main-list a {
     margin-left: 8px;
-    color: #F2AD5F;
+    color: #0F172A;
     text-decoration: underline;
     font-weight: bold;
 }

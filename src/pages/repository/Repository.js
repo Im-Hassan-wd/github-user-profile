@@ -45,7 +45,7 @@ export default function Repository () {
         </Helmet>
         <div className="repository">
             <div className='banner'></div>
-            <img className='owner-img' src={'https://avatars.githubusercontent.com/u/'+ id +'?v=4'} />
+            <img className='owner-img' alt='avatar' src={'https://avatars.githubusercontent.com/u/'+ id +'?v=4'} />
             <div className='owner'>
                 <h2>{ name }</h2>
             </div>

@@ -1,10 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// styles
-import './Searchbar.css'
-
-
 export default function Searchbar() {
   const [term, setTerm] = useState('')
   const navigate = useNavigate()
@@ -23,8 +19,8 @@ export default function Searchbar() {
         onChange={e => setTerm(e.target.value)}
         required
         placeholder='search user profile'
+        className='home-input'
     />
-    <button>/</button>
     </form>
   )
 }
