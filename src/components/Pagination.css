@@ -11,9 +11,10 @@
   .pagination h5 {
     display: flex;
     align-items: center;
+    margin: 0;
   }
   
-  .pagination button, .preview button, .pagination input {
+  .pagination button, .preview button {
     background: #333;
     border: none;
     padding: 3px 10px;
@@ -24,6 +25,8 @@
     align-items: center;
     cursor: pointer;
     color: #fff;
+    transform: scale(1.2);
+    transition: all 0.5s ease;
   }
 
   .pagination input {
