@@ -36,7 +36,7 @@ export default function Home() {
           <div className="desc">
             <img src={avatar} alt="avatar-warwick" />
             <div className='desc-text'>
-              <p>GitHub Copilot is your AI pair programmer that empowers you to complete tasks 55% faster by turning natural language.</p>
+              <p>code reuse is the reuse of existing code from either external sources or from one's own past projects to develop new code.</p>
               <h5 className='me'>Hassan Warwick</h5>
               <h5>Freelance web developer</h5>
             </div>
