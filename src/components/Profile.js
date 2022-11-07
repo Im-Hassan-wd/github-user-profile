@@ -52,8 +52,7 @@ export default function Profile({
     return ( 
       <div className='error'>
         <Navbar  />
-        <h1>Fret! Not you, it's us. Try again or</h1>
-        <Link to='/home'>Go back to safety</Link>
+        <h1>Something went wrong, but don't fret ___ let's give it another <Link to='/home'>shot</Link></h1>
       </div> 
     )
   }
