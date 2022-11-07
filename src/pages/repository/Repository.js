@@ -6,6 +6,7 @@ import './Repository.css'
 import repo from '../../icons/repository.png'
 import star from '../../icons/star.png'
 import fork from '../../icons/fork.png'
+import Pagination from '../../components/Pagination';
 
 export default function Repository () {
     const { id, name } = useParams()
@@ -13,12 +14,18 @@ export default function Repository () {
     const [repositories, setRepositories] = useState([])
     const [error, setError] = useState(null)
     const [isPending, setIsPending] = useState(true)
+    const [start, setStart] = useState(0)
+    const [end, setEnd] = useState(20)
 
     useEffect(() => {
+        window.scrollTo({
+            behaviour: "smooth",
+            top: "0px"
+        })
         fetchRepo()
-    }, [])
+    }, [start])
     const fetchRepo = async () => {
-       const url =  'https://api.github.com/users/'+ name +'/repos';
+       const url =  'https://api.github.com/users/'+ name +'/repos?per_page=300';
        try {
         const res = await fetch(url);
         if(!res) {
@@ -50,7 +57,11 @@ export default function Repository () {
                 <h3>{ name }</h3>
             </div>
             <div className='repo'>
-                <h4>Repositories({repositories.length})</h4>
+                <h4>
+                    <img className='repo-icon' src={repo} alt='repo-icon'/>
+                    {isPending === false ? <span>Repositories({repositories.length})</span>:
+                    <span>Repositories(...)</span>}
+                </h4>
                 {isPending && <h3>
                         <span className="load-span">.</span>
                         <span className="load-span">.</span>
@@ -80,9 +91,17 @@ export default function Repository () {
                             </li>
                         </ul>
                     </li>
-                ))}
+                )).slice(start, end)}
                 </ul>
             </div>
+            <Pagination 
+                setStart={setStart} 
+                start={start} 
+                setEnd={setEnd} 
+                end={end} 
+                repositories={repositories}
+                setIsPending={setIsPending}
+            />
         </div>
         </>
     );

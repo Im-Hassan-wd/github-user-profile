@@ -2,30 +2,25 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import Navbar from './Navbar'
-import Pagination from './Pagination'
 
 // styles
 import './Profile.css'
 import User from './User'
 
 export default function Profile({ 
-    page,
-    setPage,
     users,
     setUsers,
     isPending,
     setIsPending,
     error,
     setError,
-    url,
-    setUrl,
-    query
+    url
   }) {
 
   useEffect(() => {
     window.scrollTo({
       behaviour: "smooth",
-      top: "0px",
+      top: "0px"
     })
     getUser()
   }, [url])
@@ -77,13 +72,6 @@ export default function Profile({
       <div>
         <User users={users} />
       </div>
-      <Pagination 
-        setUrl={setUrl} 
-        page={page} 
-        setPage={setPage} 
-        users={users} 
-        query={query} 
-        />
     </div>
 
   )

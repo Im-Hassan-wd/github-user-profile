@@ -17,7 +17,7 @@ export default function Search() {
   const [users, setUsers] = useState([])
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
-  const [url, setUrl] = useState(`https://api.github.com/search/users?q=${query}&page=${page}`)
+  const [url, setUrl] = useState(`https://api.github.com/search/users?q=${query}`)
   useEffect(() => {
     const getUser = async () => {
 
