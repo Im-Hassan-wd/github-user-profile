@@ -28,7 +28,7 @@ export default function Pagination({ start, setStart, end, setEnd, repositories,
         }}>next</button>
       }
 
-      {start === 0 && end === repositories.length ? 
+      {end === repositories.length ? 
         <button className="disable">Show All</button> :
         <button onClick={() => {
           setStart(0)

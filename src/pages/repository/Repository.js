@@ -38,8 +38,8 @@ export default function Repository () {
         setError(null)
     }
     catch(err) {
-        console.log(err.message)
-        setIsPending(false)
+        setError("Something went wrong, but don't fret ___ let's give it anothershot")
+        setIsPending(true)
        }
     }
 
