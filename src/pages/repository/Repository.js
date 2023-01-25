@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 // static files  
 import './Repository.css'
@@ -10,6 +10,7 @@ import Pagination from '../../components/Pagination';
 
 export default function Repository () {
     const { id, name } = useParams()
+    const navigate = useNavigate();
 
     const [repositories, setRepositories] = useState([])
     const [error, setError] = useState(null)
@@ -29,7 +30,6 @@ export default function Repository () {
        try {
         const res = await fetch(url);
         if(!res) {
-            console.log(res)
             throw new Error()
         }
         const data = await res.json();
@@ -51,7 +51,12 @@ export default function Repository () {
             <link rel="canonical" href={"/repository/" + name + id}/>
         </Helmet>
         <div className="repository">
-            <div className='banner'></div>
+            <div className='banner'>
+              <button onClick={() => navigate(-1)}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" strokeWidth="2.5" stroke="#000000" fill="none" className="duration 300 transform transition-all"><path d="M45.15 57.47L19.88 30.84 45.15 6.58"></path></svg>
+              Go back
+              </button>
+            </div>
             <img className='owner-img' alt='avatar' src={'https://avatars.githubusercontent.com/u/'+ id +'?v=4'} />
             <div className='owner'>
                 <h3>{ name }</h3>
