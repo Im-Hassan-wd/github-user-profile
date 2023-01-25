@@ -2,8 +2,8 @@ import { useState } from 'react'
 
 import './Pagination.css'
 
-export default function Pagination({ start, setStart, end, setEnd, repositories, setIsPending}) {
-
+export default function Pagination({ start, setStart, end, setEnd, repositories, setIsPending}) { 
+  
   return (
     <div className="pagination">
       <span className="range">({start} - {end})</span>
@@ -18,7 +18,7 @@ export default function Pagination({ start, setStart, end, setEnd, repositories,
         }}>prev</button>
       }
 
-      {end === repositories.length ? 
+      {end >= repositories.length ? 
         <button className="disable">next</button> :
         <button onClick={() => {
           setStart(start += 20)
